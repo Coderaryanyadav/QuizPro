@@ -86,7 +86,11 @@ performance analytics.
 
 ## 📑 Table of Contents
 
-- [📐 System Architecture Diagram](#-system-architecture-diagram)
+- [📐 System Architecture & Flow Patterns](#-system-architecture--flow-patterns)
+  - [High-Level Architecture](#1-high-level-system-architecture)
+  - [Examination Lifecycle & Assessment Flow](#2-examination-lifecycle--assessment-flow-pattern)
+  - [Crash-Resilient Atomic Storage Architecture](#3-crash-resilient-atomic-storage-flow-pattern)
+  - [Resilient Spreadsheet Ingestion Pipeline](#4-resilient-csv--excel-ingestion-pipeline)
 - [📸 Screenshots & Visual Tour](#-screenshots--visual-tour)
 - [🌐 Live Web Application (Vercel)](#-live-web-application-vercel)
 - [☁️ Supabase Cloud Database Integration](#️-supabase-cloud-database-integration)
@@ -102,7 +106,9 @@ performance analytics.
 
 ---
 
-## 📐 System Architecture Diagram
+## 📐 System Architecture & Flow Patterns
+
+### 1. High-Level System Architecture
 
 ```mermaid
 flowchart TD
@@ -140,6 +146,98 @@ flowchart TD
 
     LocalFile -.->|"Cloud Sync (Push/Pull)"| SupabaseDB
     WebVault -.->|"Cloud Sync (Push/Pull)"| SupabaseDB
+```
+
+---
+
+### 2. Examination Lifecycle & Assessment Flow Pattern
+
+```mermaid
+flowchart TD
+    Start(["🚀 Launch QuizPro"]) --> Auth["👤 Student Profile Selection\n(Select Active Profile)"]
+    Auth --> ModeChoice{"🎯 Mode & Filter Configuration"}
+    
+    ModeChoice -->|"Timed Exam"| TimedConfig["⏱️ Timed Simulator\n(Set Duration & Passing Threshold)"]
+    ModeChoice -->|"Practice Arena"| PracticeConfig["📘 Interactive Practice\n(Show Explanations & Instant Check)"]
+    ModeChoice -->|"Revision"| StarredConfig["⭐ Starred Drill\n(Practice Only Flagged Mistakes)"]
+    
+    TimedConfig --> MatrixFilter["🎯 Taxonomy Matrix Filter\n(Select Chapters, Topics & Question Types)"]
+    PracticeConfig --> MatrixFilter
+    StarredConfig --> MatrixFilter
+
+    MatrixFilter --> ActiveSession["📝 Active Session Engine\n• Desktop Hotkeys (1-4, Enter, Flag)\n• Question Navigation Grid\n• Option Elimination Strikethroughs\n• Background State Checkpointing"]
+
+    ActiveSession --> SubmitEvent{"🏁 Submission Event"}
+    SubmitEvent -->|"Timer Expiration"| AutoSubmit["⏰ Auto-Submit on Timeout"]
+    SubmitEvent -->|"User Confirmed"| ManualSubmit["✅ Manual Review & Submit"]
+
+    AutoSubmit --> Evaluation["📊 Scoring & Evaluation Engine"]
+    ManualSubmit --> Evaluation
+
+    Evaluation --> Snapshot["📸 Immutable Attempt Snapshot\n(Locks Questions & Selected Answers)"]
+    Snapshot --> StreakCalc["🔥 Daily Goal & Streak Increment"]
+    StreakCalc --> ResultUI["🎉 Results Dashboard\n• Confetti Animations & Sound Synthesizer\n• Score Breakdown & Topic Accuracy\n• Flag Missed Questions for Re-Practice"]
+    ResultUI --> CloudSync["☁️ Supabase Cloud Synchronization\n(Async Upsert to Remote PostgreSQL)"]
+    CloudSync --> End(["🏁 Session Archived"])
+```
+
+---
+
+### 3. Crash-Resilient Atomic Storage Flow Pattern
+
+```mermaid
+flowchart LR
+    subgraph AppMemory["Application Runtime"]
+        StateChange["State Mutation\n(New Exam / Attempt / Bookmark)"]
+        Serializer["JSON Entity Serializer\n(Versioned Schema v2.0)"]
+    end
+
+    subgraph AtomicIO["Atomic File System Pipeline"]
+        TmpFile["1. Write Temporary Staging\n(.tmp_TIMESTAMP.json)"]
+        Flush["2. Flush Buffer & Force Sync\n(Ensure Data Committed to Disk)"]
+        AtomicRename["3. Atomic Replace / Rename\n(Atomic OS Syscall: renameSync)"]
+        ActiveDB["4. Active Database Store\n(mcq_data/exams.json)"]
+    end
+
+    subgraph CacheAndSync["Cache & Remote Layer"]
+        MemCache["5. In-Memory Reactive Cache\n(Change Notifiers Trigger Re-render)"]
+        CloudQueue["6. Background Cloud Queue\n(Push payload to Supabase)"]
+    end
+
+    StateChange --> Serializer
+    Serializer --> TmpFile
+    TmpFile --> Flush
+    Flush --> AtomicRename
+    AtomicRename --> ActiveDB
+    ActiveDB --> MemCache
+    MemCache --> CloudQueue
+```
+
+---
+
+### 4. Resilient CSV & Excel Ingestion Pipeline
+
+```mermaid
+flowchart TD
+    FileIn["📁 Raw Spreadsheet File\n(CSV or XLSX Document)"] --> Decode["🔤 Encoding & Delimiter Detection\n(Strip UTF-8 BOM, Discover Comma/Tab/Semicolon)"]
+    
+    Decode --> HeaderMap["📑 Header Normalization Engine\n(Map Aliases: prompt -> question, key -> correct_answer)"]
+    
+    HeaderMap --> RowLoop["🔄 Row-by-Row Validation Loop"]
+    
+    RowLoop --> TypeDetect{"Question Type Detection"}
+    TypeDetect -->|"Single Answer"| SingleCheck["Validate Single Choice (A-D, 1-4)"]
+    TypeDetect -->|"Multi Select"| MultiCheck["Parse Multi-Select Syntax (A|B|C)"]
+    TypeDetect -->|"True / False"| TFCheck["Normalize Boolean (True/False)"]
+
+    SingleCheck --> CleanDedupe["🧹 Deduplication & Sanitization Filter"]
+    MultiCheck --> CleanDedupe
+    TFCheck --> CleanDedupe
+
+    CleanDedupe --> Preview["👁️ Interactive Validation Preview Modal\n(Review Parsed Questions, Flags & Errors)"]
+    Preview --> Confirm{"User Approves Import?"}
+    Confirm -->|"Cancel"| Abort["❌ Abort Import"]
+    Confirm -->|"Approve"| CommitStore["💾 Commit to Local Storage\n(Assign RFC4122 UUIDs & Index Numbers)"]
 ```
 
 ---
