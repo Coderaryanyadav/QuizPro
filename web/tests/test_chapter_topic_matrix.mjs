@@ -1,11 +1,16 @@
 import assert from 'assert';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '../..');
 
 console.log('🧪 Testing Hierarchical Chapter & Topic Selection and Option Shapes...');
 
 // 1. Verify CSS rules for shapes and Chapter-Topic matrix
-const cssContent = fs.readFileSync('web/styles/main.css', 'utf8');
+const cssContent = fs.readFileSync(path.join(rootDir, 'web/styles/main.css'), 'utf8');
 
 assert(cssContent.includes('.options-list.is-single .option-letter') && cssContent.includes('border-radius: 50% !important;'), 
   'CSS must include circle border-radius (50%) for single select');
@@ -18,7 +23,7 @@ assert(cssContent.includes('.ct-chapter-cell.has-selected') || cssContent.includ
 console.log('✅ CSS shape and matrix rules verified.');
 
 // 2. Verify HTML elements for Chapter & Topic Matrix
-const htmlContent = fs.readFileSync('web/index.html', 'utf8');
+const htmlContent = fs.readFileSync(path.join(rootDir, 'web/index.html'), 'utf8');
 
 assert(htmlContent.includes('id="launcherCTSummaryBar"'), 'HTML must include #launcherCTSummaryBar');
 assert(htmlContent.includes('id="launcherCTMatrixContainer"'), 'HTML must include #launcherCTMatrixContainer');

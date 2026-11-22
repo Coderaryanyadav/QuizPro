@@ -10,7 +10,7 @@ from reportlab.pdfgen import canvas
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_PDF = os.path.join(BASE_DIR, 'docs', 'Flutter_NextGen_Capabilities_Roadmap.pdf')
-MOBILE_SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'Screenshots', 'UltraHD_Mobile')
+MOBILE_SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'docs', 'screenshots', 'UltraHD_Mobile')
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):

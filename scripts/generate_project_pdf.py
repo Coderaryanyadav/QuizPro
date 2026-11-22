@@ -10,7 +10,7 @@ from reportlab.pdfgen import canvas
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_PDF = os.path.join(BASE_DIR, 'docs', 'QuizPro_Executive_Project_Overview.pdf')
-SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'Screenshots', 'UltraHD_Desktop')
+SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'docs', 'screenshots', 'UltraHD_Desktop')
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):

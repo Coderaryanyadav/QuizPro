@@ -2,9 +2,9 @@ name: Flutter CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
           cache: true
 
       - name: Install Dependencies
@@ -55,7 +55,7 @@ jobs:
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
           cache: true
 
       - name: Enable Windows Desktop
@@ -87,7 +87,7 @@ jobs:
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
           cache: true
 
       - name: Enable macOS Desktop

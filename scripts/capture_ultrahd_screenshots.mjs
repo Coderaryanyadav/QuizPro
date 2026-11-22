@@ -206,14 +206,14 @@ async function captureAll() {
   const viewports = [
     {
       name: 'Desktop_4K',
-      folder: 'Screenshots/UltraHD_Desktop',
+      folder: 'docs/screenshots/UltraHD_Desktop',
       width: 2560,
       height: 1440,
       deviceScaleFactor: 2 // 5120x2880 Ultra-HD Retina
     },
     {
       name: 'Mobile_ProMax',
-      folder: 'Screenshots/UltraHD_Mobile',
+      folder: 'docs/screenshots/UltraHD_Mobile',
       width: 430,
       height: 932,
       deviceScaleFactor: 3 // 1290x2796 Ultra-HD Retina

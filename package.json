@@ -4,7 +4,7 @@
   "description": "QuizPro Examination Simulator Test & Automation Suite",
   "type": "module",
   "scripts": {
-    "test": "node tests/test_chapter_topic_matrix.mjs && node tests/hardcore_full_audit.mjs",
+    "test": "node web/tests/test_chapter_topic_matrix.mjs && node web/tests/hardcore_full_audit.mjs",
     "screenshots": "node scripts/capture_ultrahd_screenshots.mjs"
   },
   "dependencies": {

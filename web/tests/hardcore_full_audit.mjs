@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
+const rootDir = path.resolve(__dirname, '../..');
 
 let totalTests = 0;
 let passedTests = 0;
@@ -62,8 +62,8 @@ async function runAudit() {
   // ===========================================================================
   console.log('📦 SUITE 1: STORAGE, UUID & REPOSITORY INTEGRITY');
 
-  const { Storage } = await import('../web/scripts/storage.js');
-  const { createSampleDemoExam } = await import('../web/scripts/defaultData.js');
+  const { Storage } = await import('../scripts/storage.js');
+  const { createSampleDemoExam } = await import('../scripts/defaultData.js');
 
   assert(typeof Storage.getAllExams === 'function', 'Storage.getAllExams is defined');
   assert(typeof Storage.saveExam === 'function', 'Storage.saveExam is defined');
@@ -178,7 +178,7 @@ async function runAudit() {
   // ===========================================================================
   console.log('\n📄 SUITE 2: CSV & EXCEL PARSER ROBUSTNESS');
 
-  const { parseCSVString, processRows } = await import('../web/scripts/importEngine.js');
+  const { parseCSVString, processRows } = await import('../scripts/importEngine.js');
 
   // Multi-column alias testing
   const csvRaw = `question,option_a,option_b,option_c,option_d,correct_answer,explanation,topic,difficulty
@@ -220,7 +220,7 @@ async function runAudit() {
   // ===========================================================================
   console.log('\n🧠 SUITE 3: ASSESSMENT ENGINE & SCORING MECHANICS');
 
-  const { ExamEngine } = await import('../web/scripts/examEngine.js');
+  const { ExamEngine } = await import('../scripts/examEngine.js');
 
   const testQuestions = [
     { id: 'tq_1', question: 'Question 1', options: ['A', 'B', 'C', 'D'], correctAnswers: [1], topic: 'Logic' },
