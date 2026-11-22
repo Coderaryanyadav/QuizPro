@@ -148,22 +148,22 @@ flowchart TD
 
 ### 🖥️ Desktop Experience (UltraHD)
 
-| Executive Dashboard | Question Import Preview | Timed Exam Simulation |
-| :---: | :---: | :---: |
+|                                             Executive Dashboard                                             |                                             Question Import Preview                                              |                                          Timed Exam Simulation                                           |
+| :---------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
 | [![Dashboard](docs/screenshots/dashboard.png)](docs/screenshots/UltraHD_Desktop/01_Executive_Dashboard.png) | [![Import Preview](docs/screenshots/import.png)](docs/screenshots/UltraHD_Desktop/12_Import_Questions_Modal.png) | [![Exam Mode](docs/screenshots/exam.png)](docs/screenshots/UltraHD_Desktop/08_Timed_Exam_Simulation.png) |
 
-| Exam Catalog & Launcher | Question Bank Matrix | Performance Analytics |
-| :---: | :---: | :---: |
+|                                                 Exam Catalog & Launcher                                                  |                                                          Question Bank Matrix                                                           |                                                            Performance Analytics                                                             |
+| :----------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![Catalog](docs/screenshots/UltraHD_Desktop/02_Exam_Catalog.png)](docs/screenshots/UltraHD_Desktop/02_Exam_Catalog.png) | [![Matrix](docs/screenshots/UltraHD_Desktop/03_Question_Bank_Matrix.png)](docs/screenshots/UltraHD_Desktop/03_Question_Bank_Matrix.png) | [![Analytics](docs/screenshots/UltraHD_Desktop/04_Performance_Analytics.png)](docs/screenshots/UltraHD_Desktop/04_Performance_Analytics.png) |
 
-| Exam History Log | Settings & Cloud Configuration | Question Editor Modal |
-| :---: | :---: | :---: |
+|                                                     Exam History Log                                                     |                                                      Settings & Cloud Configuration                                                       |                                                           Question Editor Modal                                                           |
+| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 | [![History](docs/screenshots/UltraHD_Desktop/05_Exam_History.png)](docs/screenshots/UltraHD_Desktop/05_Exam_History.png) | [![Settings](docs/screenshots/UltraHD_Desktop/06_Settings_Preferences.png)](docs/screenshots/UltraHD_Desktop/06_Settings_Preferences.png) | [![Editor](docs/screenshots/UltraHD_Desktop/14_Question_Editor_Modal.png)](docs/screenshots/UltraHD_Desktop/14_Question_Editor_Modal.png) |
 
 ### 📱 Mobile Experience (UltraHD)
 
-| Mobile Dashboard | Interactive Practice | Timed Simulation | Score & Results |
-| :---: | :---: | :---: | :---: |
+|                                                               Mobile Dashboard                                                                |                                                                  Interactive Practice                                                                  |                                                              Timed Simulation                                                              |                                                               Score & Results                                                                |
+| :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![Mobile Dashboard](docs/screenshots/UltraHD_Mobile/01_Executive_Dashboard.png)](docs/screenshots/UltraHD_Mobile/01_Executive_Dashboard.png) | [![Practice Mode](docs/screenshots/UltraHD_Mobile/07_Interactive_Practice_Mode.png)](docs/screenshots/UltraHD_Mobile/07_Interactive_Practice_Mode.png) | [![Timed Sim](docs/screenshots/UltraHD_Mobile/08_Timed_Exam_Simulation.png)](docs/screenshots/UltraHD_Mobile/08_Timed_Exam_Simulation.png) | [![Score Results](docs/screenshots/UltraHD_Mobile/09_Score_Results_Screen.png)](docs/screenshots/UltraHD_Mobile/09_Score_Results_Screen.png) |
 
 ---
@@ -297,7 +297,6 @@ QuizPro/
 ├── .github/workflows/          # GitHub Actions CI/CD workflows (Flutter CI)
 ├── assets/                     # Application icons and bundled sample datasets
 ├── docs/                       # Engineering specifications and generated documentation
-│   ├── audits/                 # Security, performance, and documentation audits
 │   ├── screenshots/            # Standard UltraHD documentation screenshot assets
 │   ├── DATA_ARCHITECTURE.md    # Persistence contracts & atomic I/O blueprints
 │   ├── DATA_MODEL.md           # Schema definitions and entity relationship specs
@@ -321,7 +320,6 @@ QuizPro/
     ├── assets/                 # Web assets and icons
     ├── scripts/                # Web application scripts (App, Storage, Engine, Crypto)
     ├── styles/                 # Web application stylesheets
-    ├── supabase/               # Web Supabase sync engine
     └── tests/                  # 71 Node.js headless web audit & storage assertions
 ```
 
