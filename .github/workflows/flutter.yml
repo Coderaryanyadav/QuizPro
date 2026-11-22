@@ -189,13 +189,13 @@ jobs:
       - name: Publish to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || 'v2.0.0' }}
-          name: "QuizPro v2.0.0 — Universal Cross-Platform Examination Simulator"
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || 'v1.0.0' }}
+          name: "QuizPro v1.0.0 — Universal Cross-Platform Examination Simulator"
           draft: false
           prerelease: false
           generate_release_notes: false
           body: |
-            ## 🎓 QuizPro v2.0.0 — Cross-Platform Examination Simulator
+            ## 🎓 QuizPro v1.0.0 — Cross-Platform Examination Simulator
 
             QuizPro is an ultra-modern, cross-platform MCQ examination simulator and certification preparation platform engineered with Flutter, Dart, Supabase, and Vercel.
 

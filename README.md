@@ -18,11 +18,13 @@
 <br/>
 
 **[🚀 Live Web Simulator](https://web-sandy-five-55.vercel.app)** &nbsp;•&nbsp;
-**[📦 Multi-Platform Releases](https://github.com/Coderaryanyadav/QuizPro/releases)** &nbsp;•&nbsp;
-**[📊 Executive Project Overview](./docs/QuizPro_Executive_Project_Overview.pdf)** &nbsp;•&nbsp;
-**[🗺️ Capabilities Roadmap](./docs/Flutter_NextGen_Capabilities_Roadmap.pdf)** &nbsp;•&nbsp;
-**[📐 Data Architecture](./docs/DATA_ARCHITECTURE.md)** &nbsp;•&nbsp;
-**[🤝 Contributing](./CONTRIBUTING.md)**
+**[📦 Multi-Platform Releases](https://github.com/Coderaryanyadav/QuizPro/releases)**
+&nbsp;•&nbsp;
+**[📊 Executive Project Overview](./docs/QuizPro_Executive_Project_Overview.pdf)**
+&nbsp;•&nbsp;
+**[🗺️ Capabilities Roadmap](./docs/Flutter_NextGen_Capabilities_Roadmap.pdf)**
+&nbsp;•&nbsp; **[📐 Data Architecture](./docs/DATA_ARCHITECTURE.md)**
+&nbsp;•&nbsp; **[🤝 Contributing](./CONTRIBUTING.md)**
 
 </div>
 
@@ -30,20 +32,23 @@
 
 ## 📥 Multi-Platform Downloads & Production Releases
 
-QuizPro is fully compiled and distributed across all major desktop and mobile operating systems. Download prebuilt production bundles directly from the **[GitHub Releases](https://github.com/Coderaryanyadav/QuizPro/releases)** page:
+QuizPro is fully compiled and distributed across all major desktop and mobile
+operating systems. Download prebuilt production bundles directly from the
+**[GitHub Releases](https://github.com/Coderaryanyadav/QuizPro/releases)** page:
 
-| Platform | Format | Release Artifact | Compatibility | Installation Guide |
-| :--- | :--- | :--- | :--- | :--- |
-| 🤖 **Android** | `.apk` | [**QuizPro-Android.apk**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-Android.apk) | Android 7.0+ (ARM64, ARMv7, x86_64) | Enable sideloading / APK install on device |
-| 🍎 **iOS** | `.ipa` | [**QuizPro-iOS.ipa**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-iOS.ipa) | iOS 12.0+ (iPhone & iPad) | Sideload via AltStore, Sideloadly, or TrollStore |
-| 🍏 **macOS** | `.dmg` | [**QuizPro-macOS.dmg**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-macOS.dmg) | macOS 10.15+ (Apple Silicon & Intel) | Open DMG & drag `QuizPro.app` to Applications |
-| 🍏 **macOS** | `.zip` | [**QuizPro-macOS.zip**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-macOS.zip) | macOS 10.15+ (Apple Silicon & Intel) | Extract and launch `csv_to_mcq_app.app` |
-| 🪟 **Windows** | `.zip` | [**QuizPro-Windows-x64.zip**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-Windows-x64.zip) | Windows 10 & 11 (64-bit) | Extract and execute `csv_to_mcq_app.exe` |
-| 🌐 **Web PWA** | Web | [**web-sandy-five-55.vercel.app**](https://web-sandy-five-55.vercel.app) | Chrome, Safari, Edge, Firefox | Install as PWA via browser address bar |
+| Platform       | Format | Release Artifact                                                                                                           | Compatibility                        | Installation Guide                               |
+| :------------- | :----- | :------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- | :----------------------------------------------- |
+| 🤖 **Android** | `.apk` | [**QuizPro-Android.apk**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-Android.apk)         | Android 7.0+ (ARM64, ARMv7, x86_64)  | Enable sideloading / APK install on device       |
+| 🍎 **iOS**     | `.ipa` | [**QuizPro-iOS.ipa**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-iOS.ipa)                 | iOS 12.0+ (iPhone & iPad)            | Sideload via AltStore, Sideloadly, or TrollStore |
+| 🍏 **macOS**   | `.dmg` | [**QuizPro-macOS.dmg**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-macOS.dmg)             | macOS 10.15+ (Apple Silicon & Intel) | Open DMG & drag `QuizPro.app` to Applications    |
+| 🍏 **macOS**   | `.zip` | [**QuizPro-macOS.zip**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-macOS.zip)             | macOS 10.15+ (Apple Silicon & Intel) | Extract and launch `csv_to_mcq_app.app`          |
+| 🪟 **Windows** | `.zip` | [**QuizPro-Windows-x64.zip**](https://github.com/Coderaryanyadav/QuizPro/releases/latest/download/QuizPro-Windows-x64.zip) | Windows 10 & 11 (64-bit)             | Extract and execute `csv_to_mcq_app.exe`         |
+| 🌐 **Web PWA** | Web    | [**web-sandy-five-55.vercel.app**](https://web-sandy-five-55.vercel.app)                                                   | Chrome, Safari, Edge, Firefox        | Install as PWA via browser address bar           |
 
 ### 🔐 Package Verification (SHA-256 Checksums)
 
-Every release bundle is hashed during CI/CD to ensure complete cryptographic integrity:
+Every release bundle is hashed during CI/CD to ensure complete cryptographic
+integrity:
 
 ```bash
 # Verify integrity of downloaded packages:

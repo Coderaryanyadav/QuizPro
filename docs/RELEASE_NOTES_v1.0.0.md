@@ -1,6 +1,6 @@
-# 🎓 QuizPro v2.0.0 — Modern Cross-Platform Examination Simulator
+# 🎓 QuizPro v1.0.0 — Modern Cross-Platform Examination Simulator
 
-QuizPro v2.0.0 is an enterprise-grade, cross-platform MCQ examination simulator and adaptive learning platform engineered for standardized certification preparation (e.g., AWS, CIA, CISA, PMP, SQL, and medical licensure).
+QuizPro v1.0.0 is an enterprise-grade, cross-platform MCQ examination simulator and adaptive learning platform engineered for standardized certification preparation (e.g., AWS, CIA, CISA, PMP, SQL, and medical licensure).
 
 ---
 
@@ -17,7 +17,7 @@ QuizPro v2.0.0 is an enterprise-grade, cross-platform MCQ examination simulator 
 
 ---
 
-## 🚀 Key Highlights & New Features
+## 🚀 Key Highlights & Architectural Features
 
 ### 1. Crash-Resilient Atomic Storage Architecture
 - Zero data corruption guarantee via atomic staging files (`.tmp`) and atomic file-system rename operations.
