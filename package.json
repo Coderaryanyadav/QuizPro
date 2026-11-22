@@ -1,4 +1,12 @@
 {
+  "name": "quizpro",
+  "version": "2.0.0",
+  "description": "QuizPro Examination Simulator Test & Automation Suite",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/test_chapter_topic_matrix.mjs && node tests/hardcore_full_audit.mjs",
+    "screenshots": "node scripts/capture_ultrahd_screenshots.mjs"
+  },
   "dependencies": {
     "puppeteer-core": "^25.16.0"
   }

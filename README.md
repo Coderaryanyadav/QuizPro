@@ -1,6 +1,6 @@
 # 🎓 QuizPro — Modern MCQ & Examination Simulator
 
-[![Flutter CI](https://github.com/Coderaryanyadav/CsvToMcqApp/actions/workflows/flutter.yml/badge.svg)](https://github.com/Coderaryanyadav/CsvToMcqApp/actions/workflows/flutter.yml)
+[![Flutter CI](https://github.com/Coderaryanyadav/QuizPro/actions/workflows/flutter.yml/badge.svg)](https://github.com/Coderaryanyadav/QuizPro/actions/workflows/flutter.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Android%20%7C%20iOS%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)](README.md)
 [![Live Web App](https://img.shields.io/badge/Live%20Web%20App-Vercel-black?style=for-the-badge&logo=vercel)](https://web-sandy-five-55.vercel.app)
@@ -18,11 +18,23 @@ practice mode with per-option explanations, and pure chronological analytics.
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Visual Tour
 
-| Dashboard & Overview                         | Question Import Preview                        | Exam Simulation Mode                    |
-| -------------------------------------------- | ---------------------------------------------- | --------------------------------------- |
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Import Preview](docs/screenshots/import.png) | ![Exam Mode](docs/screenshots/exam.png) |
+### Desktop Experience (UltraHD)
+
+| Executive Dashboard | Question Import Preview | Timed Exam Simulation |
+| :---: | :---: | :---: |
+| [![Dashboard](docs/screenshots/dashboard.png)](Screenshots/UltraHD_Desktop/01_Executive_Dashboard.png) | [![Import Preview](docs/screenshots/import.png)](Screenshots/UltraHD_Desktop/12_Import_Questions_Modal.png) | [![Exam Mode](docs/screenshots/exam.png)](Screenshots/UltraHD_Desktop/08_Timed_Exam_Simulation.png) |
+
+| Exam Catalog & Launcher | Question Bank Matrix | Performance Analytics |
+| :---: | :---: | :---: |
+| [![Catalog](Screenshots/UltraHD_Desktop/02_Exam_Catalog.png)](Screenshots/UltraHD_Desktop/02_Exam_Catalog.png) | [![Matrix](Screenshots/UltraHD_Desktop/03_Question_Bank_Matrix.png)](Screenshots/UltraHD_Desktop/03_Question_Bank_Matrix.png) | [![Analytics](Screenshots/UltraHD_Desktop/04_Performance_Analytics.png)](Screenshots/UltraHD_Desktop/04_Performance_Analytics.png) |
+
+### Mobile Experience (UltraHD)
+
+| Mobile Dashboard | Interactive Practice | Score & Results |
+| :---: | :---: | :---: |
+| [![Mobile Dashboard](Screenshots/UltraHD_Mobile/01_Executive_Dashboard.png)](Screenshots/UltraHD_Mobile/01_Executive_Dashboard.png) | [![Practice Mode](Screenshots/UltraHD_Mobile/07_Interactive_Practice_Mode.png)](Screenshots/UltraHD_Mobile/07_Interactive_Practice_Mode.png) | [![Score Results](Screenshots/UltraHD_Mobile/09_Score_Results_Screen.png)](Screenshots/UltraHD_Mobile/09_Score_Results_Screen.png) |
 
 ---
 
@@ -90,8 +102,8 @@ practice mode with per-option explanations, and pure chronological analytics.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Coderaryanyadav/CsvToMcqApp.git
-cd CsvToMcqApp
+git clone https://github.com/Coderaryanyadav/QuizPro.git
+cd QuizPro
 ```
 
 ### 2. Install Dependencies
@@ -171,6 +183,8 @@ lib/
 
 ### 📚 Architecture & Engineering Documentation
 
+- [Executive Project Overview (PDF)](docs/QuizPro_Executive_Project_Overview.pdf) — Comprehensive executive summary, feature matrices, architecture diagrams, and system specifications.
+- [Next-Gen Capabilities Roadmap (PDF)](docs/Flutter_NextGen_Capabilities_Roadmap.pdf) — Future engineering roadmap, performance targets, and architectural milestones.
 - [Data Architecture Blueprint](docs/DATA_ARCHITECTURE.md) — Comprehensive
   storage engine, persistence matrix, and lifecycle guarantees.
 - [Schema & Migrations Guide](docs/MIGRATIONS.md) — Storage schema version
@@ -188,14 +202,17 @@ Run the full automated test suite (including model serialization, student
 isolation, atomic persistence, import engine, and widget tests):
 
 ```bash
-# Code formatting check
-dart format .
+# Verify code formatting (lib & test)
+dart format --output=none --set-exit-if-changed lib test
 
-# Static analyzer
+# Flutter static analyzer
 flutter analyze
 
-# Automated tests
+# Flutter automated test suite (83 unit & widget tests)
 flutter test
+
+# Web application & Storage audit suite (71 passing assertions)
+npm test
 ```
 
 ---

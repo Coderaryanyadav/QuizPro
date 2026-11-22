@@ -8,9 +8,9 @@ from reportlab.platypus import (
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
 
-BASE_DIR = '/Users/aryan/Desktop/PROJECTS/1 - MCQ-App'
-OUTPUT_PDF = os.path.join(BASE_DIR, 'QuizPro_Executive_Project_Overview.pdf')
-SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'Screenshots/UltraHD_Desktop')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUTPUT_PDF = os.path.join(BASE_DIR, 'docs', 'QuizPro_Executive_Project_Overview.pdf')
+SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'Screenshots', 'UltraHD_Desktop')
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):
